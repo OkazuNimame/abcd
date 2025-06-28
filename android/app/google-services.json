@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "481222518079",
+    "project_id": "beans-bc9a5",
+    "storage_bucket": "beans-bc9a5.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:481222518079:android:bef01ea8e2a1e6fd739f8a",
+        "android_client_info": {
+          "package_name": "com.example.abcd"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBuiTL3ycPSH--G9M9zHMjSHzhuaLE3rWE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
