@@ -38,9 +38,7 @@ class _SubjectAnalysis extends ConsumerState<SubjectAnalysis> {
           body: Column(
             children: [
               data.isNotEmpty
-                  ? SizedBox(
-                      height: 250,
-                      width: MediaQuery.of(context).size.width,
+                  ? Expanded(
 
                       child: ListView.builder(
                         itemCount: data.length,

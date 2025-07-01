@@ -2,11 +2,11 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 class UnitModel {
   int point;
-  String? id;
   String uid;
   int unit;
+  String? id;
 
-  UnitModel({required this.point,this.id,required this.uid, required this.unit});
+  UnitModel({required this.point,required this.uid,this.id, required this.unit});
 
   factory UnitModel.fromJson(DocumentSnapshot snap) {
     final data = snap.data() as Map<String, dynamic>;
@@ -20,7 +20,7 @@ class UnitModel {
     return {
       'point':point,
       'userId':uid,
-      'unit':unit
+      'unit':unit,
     };
   }
 }

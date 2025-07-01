@@ -46,8 +46,7 @@ class _SubjectListPage extends ConsumerState<SubjectListPage> {
                     bool check = data[index].check;
                     int reports = int.parse(data[index].reports);
                     int classes = int.parse(data[index].classes);
-                    int unit = int.parse(data[index].unit);
-
+                    int unit = data[index].unit['unit'];
                     return Container(
                       margin: EdgeInsets.only(
                         top: 10,

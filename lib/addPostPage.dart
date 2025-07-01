@@ -1,4 +1,6 @@
 import 'package:abcd/Logic/GoogleLogin/auth/auth_provider.dart';
+import 'package:abcd/Logic/Unit/UnitModel.dart';
+import 'package:abcd/Logic/Unit/UnitProvider.dart';
 import 'package:abcd/Logic/post/postModel.dart';
 import 'package:abcd/Logic/post/post_provider.dart';
 import 'package:abcd/UI/TextUI.dart';
@@ -112,7 +114,7 @@ class _AddPostPage extends ConsumerState<AddPostPage> {
                                 subjectName: subjectName.text,
                                 classes: classes.text,
                                 reports: reports.text,
-                                unit: unit.text,
+                                unit: {'unit':int.parse(unit.text),'point':null},
                                 uid:ref.read(userData)!.uid.toString(),
                                 reportChecks:toListMap(List.filled(int.parse(reports.text), 0)) ,
                                 classChecks: toListMap(List.filled(int.parse(classes.text), 0)),
@@ -121,6 +123,7 @@ class _AddPostPage extends ConsumerState<AddPostPage> {
 
 
                               ref.read(postRepositoryProvider).addPost(post);
+
 
                               Navigator.pushReplacement(context,
                                   MaterialPageRoute(builder: (context) => MyApp()));

@@ -4,7 +4,7 @@ class Post {
   final String subjectName;
   final String classes;
   final String reports;
-  final String unit;
+  final Map<String,dynamic> unit;
   final String uid;
   final List<Map<String,dynamic>> reportChecks,classChecks;
   final String? id;
@@ -28,6 +28,7 @@ class Post {
     // dynamicなListをintのListに変換
     List<Map<String,dynamic>> reportChecks = (data['reportChecks'] as List<dynamic>).map((e) => e as Map<String,dynamic>).toList();
     List<Map<String,dynamic>> classChecks = (data['classChecks'] as List<dynamic>).map((e) => e as Map<String,dynamic>).toList();
+
 
 
 

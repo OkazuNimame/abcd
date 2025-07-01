@@ -21,6 +21,7 @@ class PostRepository {
     await firestore.collection('posts').add(post.toJson());
   }
 
+
   Future<List<Post>> getPostsOnce() async {
     final snapshot = await firestore
         .collection('posts')
@@ -37,6 +38,12 @@ class PostRepository {
     });
   }
 
+  Future<void> updatePoint(Map<String,dynamic> data,String id) async {
+    await firestore.collection('posts').doc(id).update({
+      'unit':data
+    });
+  }
+
   Future<void> updatePostC(List<Map<String,dynamic>> classChecks,List<Map<String,dynamic>> reportChecks,String id,bool check) async {
     await firestore.collection('posts').doc(id).update({
       'classChecks':classChecks,
@@ -47,6 +54,7 @@ class PostRepository {
 
   Future<void> deletePost(String id) async {
     await firestore.collection("posts").doc(id).delete();
+    await firestore.collection('unit').doc(id).delete();
   }
 
 }

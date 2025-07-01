@@ -12,8 +12,8 @@ class UnitProvider {
 
   UnitProvider({required this.firestore});
 
-  Future<void> addUnit(UnitModel u)async {
-    await firestore.collection('unit').add(u.toMap());
+  Future<void> addUnit(UnitModel u,String id)async {
+    await firestore.collection('unit').doc(id).set(u.toMap());
   }
 
   Future<void> updatePoint(String id,UnitModel u) async {
